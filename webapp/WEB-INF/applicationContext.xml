@@ -31,9 +31,9 @@
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/test_localhost"/>
-		<property name="username" value="root"/>
-		<property name="password" value="12qwaszx"/>
+		<property name="url" value="jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_d1010f43979e37a"/>
+		<property name="username" value="b54db3f894b33e"/>
+		<property name="password" value="d4a82520"/>
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
