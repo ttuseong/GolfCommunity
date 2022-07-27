@@ -1,11 +1,11 @@
-package com.www.dao;
+package com.sns.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class StoreDao {
+public class SnsDao {
 	@Autowired
 	SqlSession sqlSession;
 	

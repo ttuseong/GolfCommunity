@@ -1,16 +1,16 @@
-package com.www.service;
+package com.sns.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.www.dao.StoreDao;
+import com.sns.dao.SnsDao;
 
 @Service
-public class StoreService {
+public class SnsService {
 	@Autowired
-	StoreDao storeDao;
+	SnsDao snsDao;
 	
 	public int GetTest() {
-		return storeDao.GetTest();
+		return snsDao.GetTest();
 	}
 }

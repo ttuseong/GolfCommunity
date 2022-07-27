@@ -16,14 +16,14 @@
 	<!-- com.javaex.controller 패키지 밑에 있는 클래스 중에 @Controller를 달고 있는 클래스의 객체를 
 		생성 하겠다. (new 하겠다) -->
 	<context:component-scan
-		base-package="com.www.controller" />
+		base-package="com.store.controller, com.sns.controller, com.admin.controller" />
 		
 	<!-- 기본 뷰 리졸버 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
-		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="prefix" value="/WEB-INF/views" />
 		<property name="suffix" value=".jsp" />
 		<property name="order" value="1" />
 	</bean>

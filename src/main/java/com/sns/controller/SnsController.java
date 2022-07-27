@@ -1,22 +1,23 @@
-package com.www.controller;
+package com.sns.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.www.service.StoreService;
+import com.sns.service.SnsService;
 
 @Controller
-public class StoreController {
+@RequestMapping("/sns")
+public class SnsController {
 	@Autowired
-	StoreService storeService;
+	SnsService snsService;
 	
-	@RequestMapping("/")
+	@RequestMapping("")
 	public String main() {
 		System.out.println("test");
 		
-		System.out.println("Dao Test" + storeService.GetTest());
-		return "test";
+		System.out.println("Dao Test" + snsService.GetTest());
+		return "/sns/test";
 	}
 	
 }
