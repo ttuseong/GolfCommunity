@@ -16,7 +16,7 @@ public class SnsController {
 	public String main() {
 		System.out.println("test");
 		
-		System.out.println("Dao Test" + snsService.GetTest());
+		//System.out.println("Dao Test" + snsService.GetTest());
 		return "/sns/test";
 	}
 	
