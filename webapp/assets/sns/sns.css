@@ -1,0 +1,39 @@
+#mainContents{ margin: 24px auto 0px auto;}
+
+/*공지 영역*/
+.section .slidewrap {max-width:1180px ;margin:0 auto;}
+.section .slidewrap .slideControl {position:relative;}
+.section .slidelist {white-space:nowrap;font-size:0;overflow:hidden;}
+.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s; height: 450px;}
+.section .slidelist > li > a {display:block;position:relative;}
+.section .slidelist > li > a img {width:100%;}
+
+/* 좌,우 슬라이드 버튼 */
+.section .slideBtn span {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+.section .left {left:5px;background:url('../test/left.png') center center / 100% no-repeat;}
+.section .right {right:5px;background:url('../test/right.png') center center / 100% no-repeat;}
+
+/* 페이징 */
+.slide-pagelist {text-align:center;padding:20px;}
+.slide-pagelist > li {display:inline-block;vertical-align:middle;}
+.slide-pagelist > li > span {display:block;padding:8px 30px;border-radius:30px;background:#ccc;margin:20px 10px;cursor:pointer;}
+.slide-pagelist > li > .js-slideActive {background:#999;}
+
+/* media query */
+@media (min-width: 1180px){
+	#mainContents{
+		width: 1180px
+	}
+}
+
+@media (min-width: 940px) and (max-width: 1179px){
+	#mainContents{
+		width: 940px
+	}
+}
+
+@media (min-width: 700px) and (max-width: 939px){
+	#mainContents{
+		width: 700px
+	}
+}
