@@ -19,21 +19,27 @@
 .slide-pagelist > li > span {display:block;padding:8px 30px;border-radius:30px;background:#ccc;margin:20px 10px;cursor:pointer;}
 .slide-pagelist > li > .js-slideActive {background:#999;}
 
+
+/* 검색 필터*/
+.filter{position: sticky; top: 0px;}
+.filter .category .categoryList {display: flex; flex-direction: row}
+.filter .category .categoryList li {display: flex; align-items: center; justify-content: center; background-color: #efefef; width: 83px; height: 32px; margin-right: 10px; border: 1px solid transparent; border-radius: 8px;}
+.filter .category .categoryList .active {color: #fff; background: #414450;}
+
+.filter .sort .sortList {min-height: 45px; background: #323232; padding: 0 10px;}
+.filter .sort .sortList li {display: inline-block; font-size: 13px; color: #fff; opacity: 0.6; padding: 14px 12px;}
+.filter .sort .sortList .active {opacity: 1;}
+.sizeTest {height: 3000px;}
+
 /* media query */
 @media (min-width: 1180px){
-	#mainContents{
-		width: 1180px
-	}
+	#mainContents{width: 1180px;}
 }
 
 @media (min-width: 940px) and (max-width: 1179px){
-	#mainContents{
-		width: 940px
-	}
+	#mainContents{	width: 940px;}
 }
 
 @media (min-width: 700px) and (max-width: 939px){
-	#mainContents{
-		width: 700px
-	}
+	#mainContents{width: 700px;	}
 }

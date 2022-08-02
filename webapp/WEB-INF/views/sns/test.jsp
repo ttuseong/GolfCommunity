@@ -58,12 +58,28 @@
 			</div>	
 		</div>
 		<!-- 일반 게시글 영역 -->
-		<div>
+		<div class="filter">
 			<!-- 필터 -->
-			<div>
+			<form action="">
+				<div class="category">
+					<ul class="categoryList">
+						<li class="active">전체글</li>
+						<li>최신글</li>
+						<li>인기글</li>
+					</ul>
+				</div>
+				<div class="sort">
+					<ul class="sortList">
+						<li class="active">등록일순</li>
+						<li>조회순</li>
+						<li>댓글순</li>
+						<li>좋아요순</li>
+					</ul>
+				</div>
+			</form>
 				
-			</div>
-			<div>
+		</div>
+		<div class="post sizeTest">
 				<ul>
 					<li>
 						<!-- 이미지 영역 -->
@@ -87,8 +103,7 @@
 						</div>
 					</li>
 				</ul>
-			</div>		
-		</div>
+			</div>	
 	</div>
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/common/jquery/jquery.js"></script>
