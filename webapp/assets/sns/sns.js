@@ -1,3 +1,13 @@
+$(document).ready(function(){
+	autoSilde();
+});
+
+function autoSilde(){
+	setInterval(function(){
+		$(".slideBtn .right").click();
+	}, 8000); 	
+}
+
 $(".right").on("click", function(){
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
 	var pos 			= slideActive.parent().index() + 1;
@@ -15,7 +25,7 @@ $(".right").on("click", function(){
 	translateValue = pos * -100;
   	$('.slidelist > li').css({'transform':'translateX(' + translateValue + '%)'})
 	
-})
+});
 
 $(".left").on("click", function(){
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
