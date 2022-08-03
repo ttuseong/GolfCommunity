@@ -79,31 +79,309 @@
 			</form>
 				
 		</div>
-		<div class="post sizeTest">
-				<ul>
-					<li>
-						<!-- 이미지 영역 -->
-						<div>
-							<img></img>
+		<div class="posList">
+			<div class="post">
+				<!-- 이미지 영역 -->
+				<div class="postImgArea">
+					<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
+				</div>
+				<!-- 게시글 영역 -->
+				<div class="postContentArea">
+					<!-- 작성자 이미지 -->
+					<div class="profileImg">
+						<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+					</div>
+					<div class="text">
+						<!-- 작성자 정보 -->
+						<div class="writerInfo">
+							<div class=writerInfo-name>
+								뚜성
+							</div>
+							<div class="writerInfo-date">
+								2022.08.03
+							</div>
 						</div>
-			
-						<!-- 게시글 영역 -->
-						<div>
-							<!-- 작성자 프사 --
-							<div>
-
-							</div>
-								<!-- 내용 간단하게 -->
-							<div>
-
-							</div>
+						<div class="contents">
+							<p>게시글 내용 TEST</p>
+						</div>
+						<div class="contentsInfo">
 							<!-- 좋아요 / 댓글 수 -->
-							<i class="fa-solid fa-heart"></i>	
-							<i class="fa-regular fa-comment-dots"></i>
+							<div class="likeCount">
+								<i class="fa-solid fa-heart"></i>
+								<span>
+									30
+								</span>
+							</div>
+							
+							<div class="commentCount">
+								<i class="fa-regular fa-comment-dots"></i>
+								<span>
+									20
+								</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="post">
+				<!-- 이미지 영역 -->
+				<div class="postImgArea">
+					<img src="${pageContext.request.contextPath}/assets/test/overWidth.jpg">
+				</div>
+				<!-- 게시글 영역 -->
+				<div class="postContentArea">
+					<!-- 작성자 이미지 -->
+					<div class="profileImg">
+						<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+					</div>
+					<div class="text">
+						<!-- 작성자 정보 -->
+						<div class="writerInfo">
+							<div class=writerInfo-name>
+								뚜성
+							</div>
+							<div class="writerInfo-date">
+								2022.08.03
+							</div>
 						</div>
-					</li>
-				</ul>
-			</div>	
+						<div class="contents">
+							<p>게시글 내용 TEST</p>
+						</div>
+						<div class="contentsInfo">
+							<!-- 좋아요 / 댓글 수 -->
+							<div class="likeCount">
+								<i class="fa-solid fa-heart"></i>
+								<span>
+									30
+								</span>
+							</div>
+							
+							<div class="commentCount">
+								<i class="fa-regular fa-comment-dots"></i>
+								<span>
+									20
+								</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="post">
+				<!-- 이미지 영역 -->
+				<div class="postImgArea">
+					<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
+				</div>
+				<!-- 게시글 영역 -->
+				<div class="postContentArea">
+					<!-- 작성자 이미지 -->
+					<div class="profileImg">
+						<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+					</div>
+					<div class="text">
+						<!-- 작성자 정보 -->
+						<div class="writerInfo">
+							<div class=writerInfo-name>
+								뚜성
+							</div>
+							<div class="writerInfo-date">
+								2022.08.03
+							</div>
+						</div>
+						<div class="contents">
+							<p>게시글 내용 TEST</p>
+						</div>
+						<div class="contentsInfo">
+							<!-- 좋아요 / 댓글 수 -->
+							<div class="likeCount">
+								<i class="fa-solid fa-heart"></i>
+								<span>
+									30
+								</span>
+							</div>
+							
+							<div class="commentCount">
+								<i class="fa-regular fa-comment-dots"></i>
+								<span>
+									20
+								</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="post">
+				<!-- 이미지 영역 -->
+				<div class="postImgArea">
+					<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+				</div>
+				<!-- 게시글 영역 -->
+				<div class="postContentArea">
+					<!-- 작성자 이미지 -->
+					<div class="profileImg">
+						<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+					</div>
+					<div class="text">
+						<!-- 작성자 정보 -->
+						<div class="writerInfo">
+							<div class=writerInfo-name>
+								뚜성
+							</div>
+							<div class="writerInfo-date">
+								2022.08.03
+							</div>
+						</div>
+						<div class="contents">
+							<p>게시글 내용 TEST</p>
+						</div>
+						<div class="contentsInfo">
+							<!-- 좋아요 / 댓글 수 -->
+							<div class="likeCount">
+								<i class="fa-solid fa-heart"></i>
+								<span>
+									30
+								</span>
+							</div>
+							
+							<div class="commentCount">
+								<i class="fa-regular fa-comment-dots"></i>
+								<span>
+									20
+								</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="post">
+				<!-- 이미지 영역 -->
+				<div class="postImgArea">
+					<img src="${pageContext.request.contextPath}/assets/test/overWidth.jpg">
+				</div>
+				<!-- 게시글 영역 -->
+				<div class="postContentArea">
+					<!-- 작성자 이미지 -->
+					<div class="profileImg">
+						<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+					</div>
+					<div class="text">
+						<!-- 작성자 정보 -->
+						<div class="writerInfo">
+							<div class=writerInfo-name>
+								뚜성
+							</div>
+							<div class="writerInfo-date">
+								2022.08.03
+							</div>
+						</div>
+						<div class="contents">
+							<p>게시글 내용 TEST</p>
+						</div>
+						<div class="contentsInfo">
+							<!-- 좋아요 / 댓글 수 -->
+							<div class="likeCount">
+								<i class="fa-solid fa-heart"></i>
+								<span>
+									30
+								</span>
+							</div>
+							
+							<div class="commentCount">
+								<i class="fa-regular fa-comment-dots"></i>
+								<span>
+									20
+								</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="post">
+				<!-- 이미지 영역 -->
+				<div class="postImgArea">
+					<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+				</div>
+				<!-- 게시글 영역 -->
+				<div class="postContentArea">
+					<!-- 작성자 이미지 -->
+					<div class="profileImg">
+						<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+					</div>
+					<div class="text">
+						<!-- 작성자 정보 -->
+						<div class="writerInfo">
+							<div class=writerInfo-name>
+								뚜성
+							</div>
+							<div class="writerInfo-date">
+								2022.08.03
+							</div>
+						</div>
+						<div class="contents">
+							<p>게시글 내용 TEST</p>
+						</div>
+						<div class="contentsInfo">
+							<!-- 좋아요 / 댓글 수 -->
+							<div class="likeCount">
+								<i class="fa-solid fa-heart"></i>
+								<span>
+									30
+								</span>
+							</div>
+							
+							<div class="commentCount">
+								<i class="fa-regular fa-comment-dots"></i>
+								<span>
+									20
+								</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="post">
+				<!-- 이미지 영역 -->
+				<div class="postImgArea">
+					<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+				</div>
+				<!-- 게시글 영역 -->
+				<div class="postContentArea">
+					<!-- 작성자 이미지 -->
+					<div class="profileImg">
+						<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+					</div>
+					<div class="text">
+						<!-- 작성자 정보 -->
+						<div class="writerInfo">
+							<div class=writerInfo-name>
+								뚜성
+							</div>
+							<div class="writerInfo-date">
+								2022.08.03
+							</div>
+						</div>
+						<div class="contents">
+							<p>게시글 내용 TEST</p>
+						</div>
+						<div class="contentsInfo">
+							<!-- 좋아요 / 댓글 수 -->
+							<div class="likeCount">
+								<i class="fa-solid fa-heart"></i>
+								<span>
+									30
+								</span>
+							</div>
+							
+							<div class="commentCount">
+								<i class="fa-regular fa-comment-dots"></i>
+								<span>
+									20
+								</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/common/jquery/jquery.js"></script>

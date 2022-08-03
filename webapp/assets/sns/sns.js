@@ -3,6 +3,7 @@ $(document).ready(function(){
 });
 
 function autoSilde(){
+	postSort();
 	setInterval(function(){
 		$(".slideBtn .right").click();
 	}, 8000); 	
@@ -60,3 +61,25 @@ $(".slide-pagelist li").on("click", function(){
 	//슬라이드 이동
 	$('.slidelist > li').css({'transform':'translateX(' + translateValue + '%)'})
 });
+
+function postSort(){
+	// 각 위치의 현재 높이 값을 저장할 변수
+	var arr = [0, 0, 0, 0];
+	// 반복할 횟수 저장
+	var length = $(".posList").children().length;
+	var chanegeIndex = 0;
+	var top = 0;
+	var left = 0;
+	var target;
+	
+	for(var i = 0; i < length; i++){
+		target = $(".posList").children().eq(i);
+		chanegeIndex = arr.reduce((max, val, index) => val < arr[max] ? index : max, 0)
+		left = (chanegeIndex * 12) + (chanegeIndex * 286);
+		top = arr[chanegeIndex];
+		arr[chanegeIndex] += target.height() + 12;
+		
+		target.css("left", left);
+		target.css("top", top);
+	}
+}
