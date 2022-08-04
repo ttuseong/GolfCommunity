@@ -2,6 +2,8 @@ $(document).ready(function(){
 	autoSilde();
 });
 
+
+// 슬라이드 자동으로 이동 시켜주는 함수
 function autoSilde(){
 	postSort();
 	setInterval(function(){
@@ -9,6 +11,8 @@ function autoSilde(){
 	}, 8000); 	
 }
 
+
+// 슬라이드 오른쪽 화살표 버튼 클릭했을 때
 $(".right").on("click", function(){
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
 	var pos 			= slideActive.parent().index() + 1;
@@ -28,6 +32,7 @@ $(".right").on("click", function(){
 	
 });
 
+// 슬라이드 왼쪽 화살표 클릭했을 때
 $(".left").on("click", function(){
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
 	var pos 			= slideActive.parent().index() - 1;
@@ -46,8 +51,8 @@ $(".left").on("click", function(){
   	$('.slidelist > li').css({'transform':'translateX(' + translateValue + '%)'})
 })
 
+//슬라이드 아래 특정 위치로 보내주는 버튼 클릭시 이동
 $(".slide-pagelist li").on("click", function(){
-	console.log("test");
 	var clikcPos = $(this).index();
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
 	var translateValue 	= clikcPos * -100;
@@ -62,6 +67,8 @@ $(".slide-pagelist li").on("click", function(){
 	$('.slidelist > li').css({'transform':'translateX(' + translateValue + '%)'})
 });
 
+
+//게시글 위치 조정
 function postSort(){
 	// 각 위치의 현재 높이 값을 저장할 변수
 	var arr = [0, 0, 0, 0];
