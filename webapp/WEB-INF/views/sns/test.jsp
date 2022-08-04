@@ -22,19 +22,16 @@
 					<ul class="slidelist">
 						<!-- 슬라이드 영역 -->
 						<li class="slideitem">
-							<p>페이징 이동확인용 1</p>
 							<a>
 								<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
 							</a>
 						</li>
 						<li class="slideitem">
-							<p>페이징 이동확인용 2</p>
 							<a>
 								<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
 							</a>
 						</li>
 						<li class="slideitem">
-							<p>페이징 이동확인용 3</p>
 							<a>	
 								<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
 							</a>
@@ -102,7 +99,8 @@
 							</div>
 						</div>
 						<div class="contents">
-							<p>게시글 내용 TEST</p>
+							게시글 내용을 무진장 많이 넣어 보자 하하하하하하
+							깔깔깔 푸푸푸푸 칼칼칼칼 창창창창	
 						</div>
 						<div class="contentsInfo">
 							<!-- 좋아요 / 댓글 수 -->
@@ -381,6 +379,7 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </body>

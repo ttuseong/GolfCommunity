@@ -1,4 +1,4 @@
-header {padding : 0 50px;height: 80px;border-bottom: 1px solid rgb(255,255,255);box-shadow: 0 0 5px black;display: flex;align-items: center;}
+header {padding : 0 50px;height: 80px;border-bottom: 1px solid rgb(255,255,255);box-shadow: 0 0 5px black;display: flex;align-items: center;width: 100%; margin: 0px !important;}
 header ul{margin: 0;}
 header .logo{float : left;}
 header .service{float: left;}
