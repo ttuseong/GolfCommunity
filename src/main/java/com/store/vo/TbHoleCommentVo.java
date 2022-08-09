@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Builder
 @Data
-public class TbHoleComment {
+public class TbHoleCommentVo {
     private Integer commentId;
     private Integer courseId;
     private Integer holeNumber;

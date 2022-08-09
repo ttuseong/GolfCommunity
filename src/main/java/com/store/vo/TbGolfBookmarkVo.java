@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Builder
 @Data
-public class TbGolfThumb {
+public class TbGolfBookmarkVo {
     private Integer courseId;
     private String userId;
     private Timestamp regDate;
