@@ -1,0 +1,47 @@
+.modal-content {overflow: hidden;}
+.close {position: absolute; right: 40px; top: 20px; font-size: 40px;}
+.modal-content .modal-body {padding: 0px; overflow: hidden;}
+
+/*게시글 영역*/
+/* 이미지 영역*/
+
+/* 유저 정보 영역 */
+.modal-content .modal-body .modal-post { vertical-align: top;}
+.modal-content .modal-post .modal-userInfo {margin-left: 1px; padding: 20px; border-bottom: 1px solid rgb(239,239,239);}
+.modal-content .modal-post .modal-userImg {display: inline-block;margin-right: 15px;}
+.modal-content .modal-post .modal-userImg img {width: 30px; height: 30px; border-radius: 50%; overflow: hidden;}
+.modal-content .modal-post .modal-userId {display: inline-block; vertical-align: middle;}
+
+/* 본문 영역 */
+.modal-content .modal-post .modal-text {margin-left:1px; padding: 10px; border-bottom: 1px solid rgb(239,239,239); max-height: 280px; overflow: scroll; -ms-overflow-style: none;}
+.modal-text::-webkit-scrollbar{display:none;}
+
+.modal-content .modal-post .modal-icon {margin-left:1px; width: 100%; height: 50px; position: relative; border-bottom: 1px solid rgb(239,239,239);}
+.modal-content .modal-post .modal-icon .iconLikes {font-size: 30px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);}
+.modal-content .modal-post .modal-icon .iconReport {font-size: 30px; position: absolute; right: 18px; top: 50%; transform: translateY(-50%);}
+
+.modal-content .modal-post .modal-comment {height: 250px; overflow: scroll; -ms-overflow-style: none;}
+.modal-comment::-webkit-scrollbar{display:none;}
+.modal-content .modal-post .modal-comment .modal-commentArea {padding: 10px;}
+.modal-content .modal-post .modal-comment .modal-profileImg {vertical-align: top; margin-right: 6px; width: 30px; height: 30px; border-radius: 50%; overflow: hidden; display: inline-block;}
+.modal-content .modal-post .modal-comment .modal-textArea {width: calc(100% - 40px); display: inline-block;}
+.modal-content .modal-post .modal-textArea .modal-commentInfo {width: 100%; height: 20px; margin-bottom: 3px;}
+.modal-content .modal-post .modal-textArea .modal-commentInfo .modal-userName {float: left;}
+.modal-content .modal-post .modal-textArea .modal-commentInfo .modal-commentDate {float: right;}
+
+.modal-content .modal-post .modal-comment-write {margin-left:1px; bottom: 0px; height: 100px; padding: 6px; font-size: 0; border-top: 1px solid rgb(239,239,239);}
+.modal-content .modal-post .modal-comment-write form {height: 100%;}
+.modal-content .modal-post .modal-comment-write .commentArea {resize: none; border: none; width: calc(92% - 4px);; display: inline-block; box-shadow: 0 0 3px black; font-size: 14px; height: 100%;}
+.modal-content .modal-post .modal-comment-write .commentBtn {width: 8%; display: inline-block; height: calc(100% + 3px); vertical-align: top; margin-left: 4px; margin-top: -2px; text-align: center;}
+.modal-content .modal-post .modal-comment-write .commentBtn button {height: 100%; width: 100%; padding: 0;}
+
+@media (min-width: 768px) {
+  .modal-dialog {width: 1100px;}
+  .modalImg {width: 70%; display: inline-block;min-height: 651px; background-color: black;line-height:651px;}
+  .modal-post {width: 30%; display: inline-block; margin-left: -4px;}
+  .modal-comment-write {position: absolute;width: 329.39px;}
+  .commentArea {width: calc(80% - 4px) !important;}
+  .commentBtn {width: 20% !important; text-align:left !important;}
+}
+
+

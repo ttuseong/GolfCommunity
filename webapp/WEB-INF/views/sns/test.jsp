@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/common/reset/reset.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/common/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/sns/sns.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/sns/modal.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/common/fontawesome/css/all.min.css">
 
 </head>
@@ -382,9 +383,11 @@
 			
 		</div>
 	</div>
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+	<jsp:include page="/WEB-INF/views/sns/modal.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/common/jquery/jquery.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/common/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/sns/sns.js"></script>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/sns/modal.js"></script>
 </html>
