@@ -8,7 +8,7 @@ create table tb_post
     ,content      NVARCHAR(2000)    NOT NULL
     ,isDelete     boolean           NOT NULL    DEFAULT 0
     ,isBlind      boolean           NOT NULL    DEFAULT 0
-    ,reg_date     TIMESTAMP         NOT NULL
+    ,reg_date     TIMESTAMP         NOT NULL    DEFAULT NOW()
     ,upd_date     TIMESTAMP         NULL
 )
 
