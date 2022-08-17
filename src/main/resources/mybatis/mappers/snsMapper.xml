@@ -3,9 +3,35 @@
 
 <mapper namespace="sns">
 	<select id="GetPost" resultType="com.sns.vo.SnsVo" parameterType="int">
-		<![CDATA[		
-			SELECT postId, user_id, content, reg_date
-    			FROM tb_post
+		<![CDATA[	
+			SELECT post.postId, user.user_nickname, post.content, post.reg_date, comment.commentCount
+    			, likes.likesCount, user.profilimg, postImg.imgURI
+    			FROM tb_post AS post
+                    INNER JOIN tb_user AS user
+                    ON post.user_id = user.user_id
+                    LEFT OUTER JOIN (
+                        SELECT postId, COUNT(*) AS commentCount
+                            FROM tb_comment
+                            GROUP BY postId) AS comment
+                    ON post.postId = comment.postId
+                    LEFT OUTER JOIN(
+                        SELECT postId, COUNT(*) AS likesCount
+                            FROM tb_likes
+                            GROUP BY postId) AS likes
+                    ON post.postId = likes.postId
+                    LEFT OUTER JOIN(
+                        SELECT postImg.postId, postImg.imgURI
+                            FROM (
+                                SELECT postimgmapping.postId, postimg.imgURI, CASE WHEN @GRP = postimgmapping.postId THEN @ROWNUM:=@ROWNUM + 1 ELSE @ROWNUM :=1 END AS ROWNUM
+                                    , (@GRP := postimgmapping.postId) AS dummy
+                                    FROM tb_postimg AS postimg
+                                    INNER JOIN tb_postimgmapping AS postimgmapping
+                                        ON postimg.imgNo = postimgmapping.imgNo
+                                   ,(SELECT @ROWNUM:=0, @GRP:='') AS temp
+                            ) AS postImg
+                        WHERE postImg.ROWNUM = 1
+                    ) AS postImg
+                    ON post.postId = postImg.postId
     			WHERE isDelete = 0
         			AND isBlind = 0
     			ORDER BY reg_Date DESC

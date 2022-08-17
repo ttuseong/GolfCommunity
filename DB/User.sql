@@ -14,6 +14,6 @@ create table tb_user
     ,user_pwd_e_dt      TIMESTAMP       NULL
     ,admin_login_dt     TIMESTAMP       NULL
     ,profilimg          VARCHAR(200)    NULL
-    ,reg_date           TIMESTAMP       NOT NULL
+    ,reg_date           TIMESTAMP       NOT NULL    DEFAULT NOW()
     ,upd_date           TIMESTAMP       NULL
 )

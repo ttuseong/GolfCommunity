@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,29 +96,28 @@
 						<!-- ÀÛ¼ºÀÚ Á¤º¸ -->
 						<div class="writerInfo">
 							<div class=writerInfo-name>
-								¶Ñ¼º
+								${snsVo.user_nickname }
 							</div>
 							<div class="writerInfo-date">
-								2022.08.03
+								<fmt:formatDate value="${snsVo.reg_date}" pattern="yy-MM-dd"/>
 							</div>
 						</div>
 						<div class="contents">
-							°Ô½Ã±Û ³»¿ëÀ» ¹«ÁøÀå ¸¹ÀÌ ³Ö¾î º¸ÀÚ ÇÏÇÏÇÏÇÏÇÏÇÏ
-							±ò±ò±ò ÇªÇªÇªÇª Ä®Ä®Ä®Ä® Ã¢Ã¢Ã¢Ã¢	
+							${snsVo.content}
 						</div>
 						<div class="contentsInfo">
 							<!-- ÁÁ¾Æ¿ä / ´ñ±Û ¼ö -->
 							<div class="likeCount">
 								<i class="fa-solid fa-heart"></i>
 								<span>
-									30
+									${snsVo.likesCount}
 								</span>
 							</div>
 							
 							<div class="commentCount">
 								<i class="fa-regular fa-comment-dots"></i>
 								<span>
-									20
+									${snsVo.commentCount}
 								</span>
 							</div>
 						</div>	
