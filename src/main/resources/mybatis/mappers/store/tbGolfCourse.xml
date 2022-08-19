@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.store.repository.TbGolfCourseRepository">
+    <resultMap id="TbGolfCourseVo" type="com.store.vo.TbGolfCourseVo">
+        <id property="courseId" column="course_id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+        <result property="courseName" column="course_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="courseLogo" column="course_logo" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="courseImgUrl" column="course_img_url" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="addressCategory" column="address_category" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+        <result property="address" column="address" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="telephone" column="telephone" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="isVisible" column="isVisible" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="isDeleted" column="isDeleted" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="regDate" column="regDate" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+    </resultMap>
+
+    <sql id="tbGolfCourseColumns">
+        ${alias}.course_id ${prefix}course_id,
+        ${alias}.course_name ${prefix}course_name,
+        ${alias}.course_logo ${prefix}course_logo,
+        ${alias}.course_img_url ${prefix}course_img_url,
+        ${alias}.address_category ${prefix}address_category,
+        ${alias}.address ${prefix}address,
+        ${alias}.telephone ${prefix}telephone,
+        ${alias}.isVisible ${prefix}isVisible,
+        ${alias}.isDeleted ${prefix}isDeleted,
+        ${alias}.regDate ${prefix}regDate
+    </sql>
+
+    <select id="selectOneByCourseId" resultType="com.store.vo.TbGolfCourseVo">
+        SELECT
+            <include refid="tbGolfCourseColumns"><property name="alias" value="tgc1"/><property name="prefix" value=""/></include>
+        FROM tb_golf_course tgc1
+        WHERE tgc1.course_id = #{courseId}
+    </select>
+
+    <select id="selectGolfCourseListBySearchMap" resultType="com.store.vo.TbGolfCourseVo"></select>
+
+
+</mapper>
