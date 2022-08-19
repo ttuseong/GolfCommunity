@@ -133,14 +133,20 @@ $(".post").on("click", function(){
       type : "post",
       data : { postId : $(this).data("postid")},
       success : function(result){
-		$(".modal-userId").val(result.postDetail.user_nickname);
-		$(".modal-text").val(result.postDetail.content);
-
+		console.log(result);
+	
+		$(".modal-userId").html(result.postDetail.user_nickname);
+		$(".modal-text").html(result.postDetail.content);
+		
+		// 댓글창 크기 조정
+		$("#postDetail").css("display", "block");	
+		$(".modal-comment").height($(".modalImg").height() - $(".modal-text").outerHeight(true) - 221);
+		
+		
+		$(".modalBtn").click();
       },
       error : function(XHR, status, error) {
          console.error(status + " : " + error);
       }
    });
-   
-	$(".modalBtn").click();
 });

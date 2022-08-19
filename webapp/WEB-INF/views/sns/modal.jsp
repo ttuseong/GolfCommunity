@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal">
+  <div class="modal fade" id="postDetail">
   	<button type="button" class="close" data-dismiss="modal">&times;</button>
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -10,7 +10,7 @@
         <div class="modal-body">
           <!-- 이미지 영역 -->
           <div class="modalImg">
-          	<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+          	<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
           </div>
           
           <!-- 게시글 영역 -->
@@ -22,29 +22,11 @@
           			<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
           		</div>	
           		<div class="modal-userId">
-          			zlsp21128@naver.com
           		</div>
           	</div>
           	
           	<!-- 게시글 내용 -->
           	<div class="modal-text">
-          		안녕하세요 반가워요
-          		불금인데 날씨도 좋네요. 정말 외출하고 싶은 날입니다.
-          		안녕하세요 반가워요
-          		불금인데 날씨도 좋네요. 정말 외출하고 싶은 날입니다.
-          		안녕하세요 반가워요
-          		불금인데 날씨도 좋네요. 정말 외출하고 싶은 날입니다.
-          		안녕하세요 반가워요
-          		불금인데 날씨도 좋네요. 정말 외출하고 싶은 날입니다.
-          		안녕하세요 반가워요
-          		불금인데 날씨도 좋네요. 정말 외출하고 싶은 날입니다.
-          		안녕하세요 반가워요
-          		불금인데 날씨도 좋네요. 정말 외출하고 싶은 날입니다.
-          		안녕하세요 반가워요
-          		불금인데 날씨도 좋네요. 정말 외출하고 싶은 날입니다.
-          		
-          		안녕하세요 반가워요
-          		불금인데 날씨도 좋네요. 정말 외출하고 싶은 날입니다.
           	</div>
           	<div class="modal-icon">
           		<div class="iconLikes">

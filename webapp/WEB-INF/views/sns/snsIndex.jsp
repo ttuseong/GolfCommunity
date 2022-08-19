@@ -126,7 +126,7 @@
 			</c:forEach>
 		</div>
 	</div>
-	<button type="button" class="d-none modalBtn" data-toggle="modal" data-target="#myModal">Open Modal</button>
+	<button type="button" class="hidden modalBtn" data-toggle="modal" data-target="#postDetail">Open Modal</button>
 	<jsp:include page="/WEB-INF/views/sns/modal.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/common/jquery/jquery.js"></script>

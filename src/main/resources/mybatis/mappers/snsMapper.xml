@@ -55,7 +55,7 @@
 			    FROM tb_post AS post
 			    INNER JOIN tb_user AS user
 			        ON post.user_no = user.user_no
-			    INNER JOIN (
+			    LEFT OUTER JOIN (
 			        SELECT postId, COUNT(*) AS count
 			            FROM tb_likes
 			            WHERE postId = ${postId}
