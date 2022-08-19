@@ -1,3 +1,5 @@
+var url = window.location.pathname.substring(0,window.location.pathname.indexOf("/",2));
+
 $(document).ready(function(){
 	autoSilde();
 });
@@ -122,3 +124,23 @@ function postSort(){
 	//posList의 높이 값이 있어야 필터가 화면 상단에 붙어 있을 수 있어서 가장 큰 height 값을 저장
 	$(".posList").css("height", Math.max.apply(null, arr));
 }
+
+//게시글 클릭 시
+$(".post").on("click", function(){
+
+	$.ajax({
+      url : url + "/sns/GetPostDetail",      
+      type : "post",
+      data : { postId : $(this).data("postid")},
+      success : function(result){
+		$(".modal-userId").val(result.postDetail.user_nickname);
+		$(".modal-text").val(result.postDetail.content);
+
+      },
+      error : function(XHR, status, error) {
+         console.error(status + " : " + error);
+      }
+   });
+   
+	$(".modalBtn").click();
+});

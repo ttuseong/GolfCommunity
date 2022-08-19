@@ -4,7 +4,7 @@ use heroku_d1010f43979e37a
 create table tb_post
 (
      postId       BIGINT            NOT NULL    PRIMARY KEY AUTO_INCREMENT
-    ,user_id      VARCHAR(50)       NOT NULL
+    ,user_no      INT               NOT NULL
     ,content      NVARCHAR(2000)    NOT NULL
     ,isDelete     boolean           NOT NULL    DEFAULT 0
     ,isBlind      boolean           NOT NULL    DEFAULT 0
@@ -33,7 +33,7 @@ create table tb_comment
 (
      commentId    BIGINT            NOT NULL    PRIMARY KEY AUTO_INCREMENT  
     ,postId       BIGINT            NOT NULL    
-    ,user_id      VARCHAR(50)       NOT NULL
+    ,user_no      INT               NOT NULL
     ,content      NVARCHAR(2000)    NOT NULL
     ,isDelete     boolean           NOT NULL    DEFAULT 0
     ,isBlind      boolean           NOT NULL    DEFAULT 0
@@ -45,7 +45,7 @@ create table tb_comment
 create table tb_likes
 (
      postId       BIGINT       NOT NULL
-    ,user_id      VARCHAR(50)  NOT NULL
+    ,user_no      INT          NOT NULL
 )
 
 ALTER TABLE tb_likes ADD PRIMARY KEY(postId, user_id);

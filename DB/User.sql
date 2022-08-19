@@ -5,8 +5,9 @@ drop table tb_user
 /* 유저 정보 */
 create table tb_user
 (
-     user_id            VARCHAR(50)     NOT NULL    PRIMARY KEY
-    ,user_nickname      VARCHAR(200)    NOT NULL
+     user_no            INT             NOT NULL    PRIMARY KEY    AUTO_INCREMENT
+    ,user_id            VARCHAR(50)     NOT NULL
+    ,user_nickname      NVARCHAR(200)    NOT NULL
     ,user_pwd           VARCHAR(80)     NOT NULL
     ,user_prev_pwd      VARCHAR(80)     NULL
     ,user_status        TINYINT         NOT NULL    DEFAULT 0

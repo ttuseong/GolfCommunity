@@ -1,13 +1,17 @@
 package com.sns.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sns.service.SnsService;
+import com.sns.vo.GetPostDetailParamVo;
 import com.sns.vo.SnsVo;
 
 @Controller
@@ -29,4 +33,10 @@ public class SnsController {
 		return "/sns/snsIndex";
 	}
 	
+	@ResponseBody
+	@RequestMapping("/GetPostDetail")
+	public Map<String, Object> GetPostDetail(@ModelAttribute GetPostDetailParamVo param) {	
+		System.out.println("test : " +  snsService.GetPostDetail(param));
+		return snsService.GetPostDetail(param);
+	}
 }

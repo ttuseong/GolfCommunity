@@ -81,53 +81,52 @@
 		</div>
 		<div class="posList">
 			<c:forEach items="${snsList}" var="snsVo">
-				<div class="post">
-				<!-- 이미지 영역 -->
-				<div class="postImgArea">
-					<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
-				</div>
-				<!-- 게시글 영역 -->
-				<div class="postContentArea">
-					<!-- 작성자 이미지 -->
-					<div class="profileImg">
-						<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
+				<div class="post" data-postid="${snsVo.postId}">
+					<!-- 이미지 영역 -->
+					<div class="postImgArea">
+						<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
 					</div>
-					<div class="text">
-						<!-- 작성자 정보 -->
-						<div class="writerInfo">
-							<div class=writerInfo-name>
-								${snsVo.user_nickname }
-							</div>
-							<div class="writerInfo-date">
-								<fmt:formatDate value="${snsVo.reg_date}" pattern="yy-MM-dd"/>
-							</div>
+					<!-- 게시글 영역 -->
+					<div class="postContentArea">
+						<!-- 작성자 이미지 -->
+						<div class="profileImg">
+							<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
 						</div>
-						<div class="contents">
-							${snsVo.content}
+						<div class="text">
+							<!-- 작성자 정보 -->
+							<div class="writerInfo">
+								<div class=writerInfo-name>
+									${snsVo.user_nickname }
+								</div>
+								<div class="writerInfo-date">
+									<fmt:formatDate value="${snsVo.reg_date}" pattern="yy-MM-dd"/>
+								</div>
+							</div>
+							<div class="contents">
+								${snsVo.content}
+							</div>
+							<div class="contentsInfo">
+								<!-- 좋아요 / 댓글 수 -->
+								<div class="likeCount">
+									<i class="fa-solid fa-heart"></i>
+									<span>
+										${snsVo.likesCount}
+									</span>
+								</div>			
+								<div class="commentCount">
+									<i class="fa-regular fa-comment-dots"></i>
+									<span>
+										${snsVo.commentCount}
+									</span>
+								</div>
+							</div>	
 						</div>
-						<div class="contentsInfo">
-							<!-- 좋아요 / 댓글 수 -->
-							<div class="likeCount">
-								<i class="fa-solid fa-heart"></i>
-								<span>
-									${snsVo.likesCount}
-								</span>
-							</div>
-							
-							<div class="commentCount">
-								<i class="fa-regular fa-comment-dots"></i>
-								<span>
-									${snsVo.commentCount}
-								</span>
-							</div>
-						</div>	
 					</div>
 				</div>
-			</div>
 			</c:forEach>
 		</div>
 	</div>
-	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+	<button type="button" class="d-none modalBtn" data-toggle="modal" data-target="#myModal">Open Modal</button>
 	<jsp:include page="/WEB-INF/views/sns/modal.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/common/jquery/jquery.js"></script>
