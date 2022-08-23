@@ -34,7 +34,24 @@
         WHERE tgc1.course_id = #{courseId}
     </select>
 
-    <select id="selectGolfCourseListBySearchMap" resultType="com.store.vo.TbGolfCourseVo"></select>
+    <select id="selectGolfCourseListBySearchMap" resultType="com.store.vo.TbGolfCourseVo">
+        SELECT
+            <include refid="tbGolfCourseColumns"><property name="alias" value="tgc1"/><property name="prefix" value=""/></include>
+        FROM tb_golf_course tgc1
+        ORDER BY reg_date DESC
+        LIMIT #{searchMap.COUNT}
+        <if test='searchMap.CURSOR != null'>
+            OFFSET #{searchMap.CURSOR}
+        </if>
+
+    </select>
+
+    <select id="selectGolfCourseListCount" resultType="java.lang.Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_golf_course
+    </select>
 
 
 </mapper>

@@ -11,5 +11,7 @@ import java.util.Map;
 public interface TbGolfCourseRepository {
 
     TbGolfCourseVo selectOneByCourseId(@Param("courseId") Integer courseId);
-    List<TbGolfCourseVo> selectGolfCourseListBySearchMap(@Param("searchMap")Map<String, Object> searchMap);
+    List<TbGolfCourseVo> selectGolfCourseListBySearchMap(@Param("searchMap")Map<String, Integer> searchMap);
+
+    int selectGolfCourseListCount();
 }
