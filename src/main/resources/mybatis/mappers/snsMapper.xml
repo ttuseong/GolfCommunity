@@ -73,7 +73,7 @@
 	
 	<select id="GetPostComment" resultType="com.sns.vo.GetPostCommentResultVo" parameterType="int">
 		<![CDATA[
-			SELECT user.profilimg, user.user_nickname, comment.content
+			SELECT user.profilimg, user.user_nickname, comment.content, comment.reg_date
     			FROM tb_comment AS comment
     			INNER JOIN tb_user AS user
         			ON comment.user_no = user.user_no

@@ -10,7 +10,14 @@
         <div class="modal-body">
           <!-- 이미지 영역 -->
           <div class="modalImg">
-          	<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
+          	<ul class="modalImg-List">
+          		<li class="modalImg-item">
+          			<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
+          		</li>
+          		<li class="modalImg-item">
+          			<img src="${pageContext.request.contextPath}/assets/test/overWidth.jpg">
+          		</li>         	
+          	</ul>
           </div>
           
           <!-- 게시글 영역 -->
@@ -33,7 +40,7 @@
           			<div class="liked">
           				<i class="fa-regular fa-heart"></i>
           			</div>
-          			<div class="nlike hidden">
+          			<div class="nlike">
           				<i class="fa-solid fa-heart"></i>
           			</div>		
           		</div>
@@ -42,132 +49,6 @@
           		</div>
           	</div>
  			<div class="modal-comment">
- 				<div class="modal-commentArea">
- 					<div class="modal-profileImg">
- 						<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
- 					</div>
- 					<div class="modal-textArea">
- 						<div class="modal-commentInfo">
- 							<div class="modal-userName">
- 								유재학
- 							</div>
- 							<div class="modal-commentDate">
- 								2022-08-09
- 							</div>
- 						</div>
- 						<div class="modal-commentContente">
- 							정말 최고에용
- 						</div>
- 					</div>
- 				</div>
- 				<div class="modal-commentArea">
- 					<div class="modal-profileImg">
- 						<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
- 					</div>
- 					<div class="modal-textArea">
- 						<div class="modal-commentInfo">
- 							<div class="modal-userName">
- 								유재학
- 							</div>
- 							<div class="modal-commentDate">
- 								2022-08-09
- 							</div>
- 						</div>
- 						<div class="modal-commentContente">
- 							정말 최고에용
- 						</div>
- 					</div>
- 				</div>
- 				<div class="modal-commentArea">
- 					<div class="modal-profileImg">
- 						<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
- 					</div>
- 					<div class="modal-textArea">
- 						<div class="modal-commentInfo">
- 							<div class="modal-userName">
- 								유재학
- 							</div>
- 							<div class="modal-commentDate">
- 								2022-08-09
- 							</div>
- 						</div>
- 						<div class="modal-commentContente">
- 							정말 최고에용
- 						</div>
- 					</div>
- 				</div>
- 				<div class="modal-commentArea">
- 					<div class="modal-profileImg">
- 						<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
- 					</div>
- 					<div class="modal-textArea">
- 						<div class="modal-commentInfo">
- 							<div class="modal-userName">
- 								유재학
- 							</div>
- 							<div class="modal-commentDate">
- 								2022-08-09
- 							</div>
- 						</div>
- 						<div class="modal-commentContente">
- 							정말 최고에용
- 						</div>
- 					</div>
- 				</div>
- 				<div class="modal-commentArea">
- 					<div class="modal-profileImg">
- 						<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
- 					</div>
- 					<div class="modal-textArea">
- 						<div class="modal-commentInfo">
- 							<div class="modal-userName">
- 								유재학
- 							</div>
- 							<div class="modal-commentDate">
- 								2022-08-09
- 							</div>
- 						</div>
- 						<div class="modal-commentContente">
- 							정말 최고에용
- 						</div>
- 					</div>
- 				</div>
- 				<div class="modal-commentArea">
- 					<div class="modal-profileImg">
- 						<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
- 					</div>
- 					<div class="modal-textArea">
- 						<div class="modal-commentInfo">
- 							<div class="modal-userName">
- 								유재학
- 							</div>
- 							<div class="modal-commentDate">
- 								2022-08-09
- 							</div>
- 						</div>
- 						<div class="modal-commentContente">
- 							정말 최고에용
- 						</div>
- 					</div>
- 				</div>
- 				<div class="modal-commentArea">
- 					<div class="modal-profileImg">
- 						<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
- 					</div>
- 					<div class="modal-textArea">
- 						<div class="modal-commentInfo">
- 							<div class="modal-userName">
- 								유재학
- 							</div>
- 							<div class="modal-commentDate">
- 								2022-08-09
- 							</div>
- 						</div>
- 						<div class="modal-commentContente">
- 							정말 최고에용
- 						</div>
- 					</div>
- 				</div>
  				
  			</div>
  			<div class="modal-comment-write">

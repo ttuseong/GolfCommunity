@@ -138,6 +138,12 @@ $(".post").on("click", function(){
 		$(".modal-userId").html(result.postDetail.user_nickname);
 		$(".modal-text").html(result.postDetail.content);
 		
+		result.postDetail.userLiked == true ? $(".liked").addClass("hidden") : $(".nlike").addClass("hidden");
+		
+		if(0 < result.commentList.length){
+			addComment(result.commentList);
+		}
+		
 		// 댓글창 크기 조정
 		$("#postDetail").css("display", "block");	
 		$(".modal-comment").height($(".modalImg").height() - $(".modal-text").outerHeight(true) - 221);
@@ -150,3 +156,26 @@ $(".post").on("click", function(){
       }
    });
 });
+
+
+
+function addComment(commentList){
+	for(var i = 0; i < commentList.length; i++){
+		var text = '';
+	
+		text += '<div class="modal-commentArea">';
+		text += '	<div class="modal-profileImg">';
+		text += '		<img src="' + commentList[i].profilimg + '">';
+		text += '	</div>';
+		text += ' 	<div class="modal-textArea">';
+		text += '		<div class="modal-commentInfo">'
+		text += '			<div class="modal-userName">' + commentList[i].user_nickname + '</div>'
+		text += '			<div class="modal-commentDate">'+ commentList[i].reg_date + '</div>'
+		text += '		</div>'
+		text += '		<div class="modal-commentContente">' + commentList[i].content + '</div>';
+		text += '	</div>';
+		text += '</div>'
+		
+		$(".modal-comment").append(text);
+	}			
+}
