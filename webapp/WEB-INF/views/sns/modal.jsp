@@ -18,6 +18,14 @@
           			<img src="${pageContext.request.contextPath}/assets/test/overWidth.jpg">
           		</li>         	
           	</ul>
+          	<div class="imgSilde hidden">
+          		<div class="left">
+          			<i class="fa-solid fa-caret-left"></i>
+          		</div>
+          		<div class="right">
+          			<i class="fa-solid fa-caret-right"></i>
+          		</div>
+          	</div>
           </div>
           
           <!-- 게시글 영역 -->

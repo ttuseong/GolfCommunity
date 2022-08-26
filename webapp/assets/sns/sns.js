@@ -19,7 +19,7 @@ function autoSilde(){
 
 
 // 슬라이드 오른쪽 화살표 버튼 클릭했을 때
-$(".right").on("click", function(){
+$(".slideBtn .right").on("click", function(){
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
 	var pos 			= slideActive.parent().index() + 1;
 	var pageLength 		= $(".slide-pagelist").children().length;
@@ -39,7 +39,7 @@ $(".right").on("click", function(){
 });
 
 // 슬라이드 왼쪽 화살표 클릭했을 때
-$(".left").on("click", function(){
+$(".slideBtn .left").on("click", function(){
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
 	var pos 			= slideActive.parent().index() - 1;
 	var pageLength 		= $(".slide-pagelist").children().length;
@@ -140,8 +140,33 @@ $(".post").on("click", function(){
 		
 		result.postDetail.userLiked == true ? $(".liked").addClass("hidden") : $(".nlike").addClass("hidden");
 		
+		//데이터 초기화 필요
+		$(".modalImg .modalImg-List").empty();
+		$(".modal-post .modal-comment").empty();
+		$(".modalImg").removeClass("hidden");
+		$(".modal-post").removeClass("noneImg");
+		$(".modal-comment-write").removeClass("noneImg");
+			
+		// 댓글 추가
 		if(0 < result.commentList.length){
 			addComment(result.commentList);
+		}
+		
+		// 이미지 내용 추가
+		if(0 < result.imgs.length){
+			
+			
+			if(1 < result.imgs.length){
+				$(".modalImg .imgSilde").removeClass("hidden");
+			} else{
+				$(".modalImg .imgSilde").addClass("hidden");
+			}
+			
+			addImgs(result.imgs);
+		} else{
+			$(".modalImg").addClass("hidden");
+			$(".modal-post").addClass("noneImg");
+			$(".modal-comment-write").addClass("noneImg");
 		}
 		
 		// 댓글창 크기 조정
@@ -161,6 +186,7 @@ $(".post").on("click", function(){
 
 function addComment(commentList){
 	for(var i = 0; i < commentList.length; i++){
+		var date = new Date(commentList[i].reg_date);
 		var text = '';
 	
 		text += '<div class="modal-commentArea">';
@@ -170,7 +196,7 @@ function addComment(commentList){
 		text += ' 	<div class="modal-textArea">';
 		text += '		<div class="modal-commentInfo">'
 		text += '			<div class="modal-userName">' + commentList[i].user_nickname + '</div>'
-		text += '			<div class="modal-commentDate">'+ commentList[i].reg_date + '</div>'
+		text += '			<div class="modal-commentDate">'+ date.getFullYear() + "-" + ("0" +date.getMonth()).slice(-2) + "-" + ("0" + date.getDay()).slice(-2) + '</div>'
 		text += '		</div>'
 		text += '		<div class="modal-commentContente">' + commentList[i].content + '</div>';
 		text += '	</div>';
@@ -178,4 +204,16 @@ function addComment(commentList){
 		
 		$(".modal-comment").append(text);
 	}			
+}
+
+function addImgs(imgList){
+	for(var i = 0; i < imgList.length; i++){
+		var text = "";
+		
+		text += '<li class="modalImg-item">';
+		text += '	<img src="' + url + '/assets/test/overHeight.jpg">';
+		text += '</li>';
+		
+		$(".modalImg-List").append(text);
+	}
 }

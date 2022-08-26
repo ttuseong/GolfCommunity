@@ -1,11 +1,15 @@
 .modal-content {overflow: hidden;}
 .close {position: absolute; right: 40px; top: 20px; font-size: 40px;}
-.modal-content .modal-body {padding: 0px; overflow: hidden; font-size: 0px;}
+.modal-content .modal-body {padding: 0px; overflow: hidden; font-size: 0px; min-height: 651px;}
+.modal-content .modal-body .noneImg {width: 100%;}
 
 /*게시글 영역*/
 /* 이미지 영역*/
+.modal-content .modalImg {position: relative;}
 .modal-content .modalImg .modalImg-List {white-space: nowrap; overflow: hidden; margin: 0px;}
-.modal-content .modalImg .modalImg-item {display: inline-block; width: 100%; min-height: 651px; line-height: 651px; vertical-align: middle; transition: all .5s;}
+.modal-content .modalImg .modalImg-item {display: inline-block; width: 100%;  line-height: 651px; vertical-align: middle; transition: all .5s;}
+.modal-content .modalImg .imgSilde .left {position: absolute; top: 50%; left: 5%; font-size: 80px; color: white; transform:translateY(-50%);}
+.modal-content .modalImg .imgSilde .right {position: absolute; top: 50%; right: 5%; font-size: 80px; color: white; transform:translateY(-50%);}
 
 /* 유저 정보 영역 */
 .modal-content .modal-body .modal-post { vertical-align: top; font-size: 14px;}
