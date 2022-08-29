@@ -10,19 +10,13 @@
         <div class="modal-body">
           <!-- 이미지 영역 -->
           <div class="modalImg">
-          	<ul class="modalImg-List">
-          		<li class="modalImg-item">
-          			<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
-          		</li>
-          		<li class="modalImg-item">
-          			<img src="${pageContext.request.contextPath}/assets/test/overWidth.jpg">
-          		</li>         	
+          	<ul class="modalImg-List">        	
           	</ul>
           	<div class="imgSilde hidden">
-          		<div class="left">
+          		<div class="imgSildeLeft">
           			<i class="fa-solid fa-caret-left"></i>
           		</div>
-          		<div class="right">
+          		<div class="imgSildeRight">
           			<i class="fa-solid fa-caret-right"></i>
           		</div>
           	</div>
@@ -44,13 +38,17 @@
           	<div class="modal-text">
           	</div>
           	<div class="modal-icon">
-          		<div class="iconLikes">
-          			<div class="liked">
-          				<i class="fa-regular fa-heart"></i>
+          		<div class="iconLikesInner">
+          			<div class="iconLikes">
+          				<div class="liked">
+          					<i class="fa-regular fa-heart"></i>
+          				</div>
+          				<div class="nlike">
+          					<i class="fa-solid fa-heart"></i>
+          				</div>
           			</div>
-          			<div class="nlike">
-          				<i class="fa-solid fa-heart"></i>
-          			</div>		
+          			
+          			<div class="likeCount">30</div>		
           		</div>
           		<div class="iconReport">
           			<i class="fa-solid fa-land-mine-on"></i>

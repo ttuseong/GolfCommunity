@@ -59,15 +59,15 @@ $(".slideBtn .left").on("click", function(){
 
 //슬라이드 아래 특정 위치로 보내주는 버튼 클릭시 이동
 $(".slide-pagelist li").on("click", function(){
-	var clikcPos = $(this).index();
+	var clickPos = $(this).index();
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
-	var translateValue 	= clikcPos * -100;
+	var translateValue 	= clickPos * -100;
 	
 	//현재 활성화된 클래스 제거
 	slideActive.removeClass("js-slideActive");
 	
 	//다음 이동해야하는 곳 클래스 추가
-	$(".slide-pagelist").children().eq(clikcPos).children('span').addClass("js-slideActive");
+	$(".slide-pagelist").children().eq(clickPos).children('span').addClass("js-slideActive");
 	
 	//슬라이드 이동
 	$('.slidelist > li').css({'transform':'translateX(' + translateValue + '%)'})
@@ -125,95 +125,3 @@ function postSort(){
 	$(".posList").css("height", Math.max.apply(null, arr));
 }
 
-//게시글 클릭 시
-$(".post").on("click", function(){
-
-	$.ajax({
-      url : url + "/sns/GetPostDetail",      
-      type : "post",
-      data : { postId : $(this).data("postid")},
-      success : function(result){
-		console.log(result);
-	
-		$(".modal-userId").html(result.postDetail.user_nickname);
-		$(".modal-text").html(result.postDetail.content);
-		
-		result.postDetail.userLiked == true ? $(".liked").addClass("hidden") : $(".nlike").addClass("hidden");
-		
-		//데이터 초기화 필요
-		$(".modalImg .modalImg-List").empty();
-		$(".modal-post .modal-comment").empty();
-		$(".modalImg").removeClass("hidden");
-		$(".modal-post").removeClass("noneImg");
-		$(".modal-comment-write").removeClass("noneImg");
-			
-		// 댓글 추가
-		if(0 < result.commentList.length){
-			addComment(result.commentList);
-		}
-		
-		// 이미지 내용 추가
-		if(0 < result.imgs.length){
-			
-			
-			if(1 < result.imgs.length){
-				$(".modalImg .imgSilde").removeClass("hidden");
-			} else{
-				$(".modalImg .imgSilde").addClass("hidden");
-			}
-			
-			addImgs(result.imgs);
-		} else{
-			$(".modalImg").addClass("hidden");
-			$(".modal-post").addClass("noneImg");
-			$(".modal-comment-write").addClass("noneImg");
-		}
-		
-		// 댓글창 크기 조정
-		$("#postDetail").css("display", "block");	
-		$(".modal-comment").height($(".modalImg").height() - $(".modal-text").outerHeight(true) - 221);
-		
-		
-		$(".modalBtn").click();
-      },
-      error : function(XHR, status, error) {
-         console.error(status + " : " + error);
-      }
-   });
-});
-
-
-
-function addComment(commentList){
-	for(var i = 0; i < commentList.length; i++){
-		var date = new Date(commentList[i].reg_date);
-		var text = '';
-	
-		text += '<div class="modal-commentArea">';
-		text += '	<div class="modal-profileImg">';
-		text += '		<img src="' + commentList[i].profilimg + '">';
-		text += '	</div>';
-		text += ' 	<div class="modal-textArea">';
-		text += '		<div class="modal-commentInfo">'
-		text += '			<div class="modal-userName">' + commentList[i].user_nickname + '</div>'
-		text += '			<div class="modal-commentDate">'+ date.getFullYear() + "-" + ("0" +date.getMonth()).slice(-2) + "-" + ("0" + date.getDay()).slice(-2) + '</div>'
-		text += '		</div>'
-		text += '		<div class="modal-commentContente">' + commentList[i].content + '</div>';
-		text += '	</div>';
-		text += '</div>'
-		
-		$(".modal-comment").append(text);
-	}			
-}
-
-function addImgs(imgList){
-	for(var i = 0; i < imgList.length; i++){
-		var text = "";
-		
-		text += '<li class="modalImg-item">';
-		text += '	<img src="' + url + '/assets/test/overHeight.jpg">';
-		text += '</li>';
-		
-		$(".modalImg-List").append(text);
-	}
-}
