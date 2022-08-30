@@ -7,7 +7,7 @@
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-body">
+        <div class="modal-body imgModalBody">
           <!-- 이미지 영역 -->
           <div class="modalImg">
           	<ul class="modalImg-List">        	
@@ -21,7 +21,6 @@
           		</div>
           	</div>
           </div>
-          
           <!-- 게시글 영역 -->
           <div class="modal-post">
           	<!-- 작성자 설명 -->

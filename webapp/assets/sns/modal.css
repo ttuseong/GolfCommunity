@@ -1,6 +1,6 @@
 .modal-content {overflow: hidden;}
 .close {position: absolute; right: 40px; top: 20px; font-size: 40px;}
-.modal-content .modal-body {padding: 0px; overflow: hidden; font-size: 0px; min-height: 651px;}
+.modal-content .imgModalBody {padding: 0px; overflow: hidden; font-size: 0px; min-height: 651px;}
 .modal-content .modal-body .noneImg {width: 100%;}
 
 /*게시글 영역*/

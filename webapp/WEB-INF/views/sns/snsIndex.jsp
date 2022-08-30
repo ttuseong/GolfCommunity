@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
@@ -16,14 +16,14 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
-	<!-- ∫ªπÆ ¿¸√º øµø™ -->
+	<!-- Î≥∏Î¨∏ Ï†ÑÏ≤¥ ÏòÅÏó≠ -->
 	<div id="mainContents">
-		<!-- ∞¯¡ˆ øµø™ -->
+		<!-- Í≥µÏßÄ ÏòÅÏó≠ -->
 		<div class="section">
 			<div class="slidewrap">
 				<div class=slideControl>	
 					<ul class="slidelist">
-						<!-- ΩΩ∂Û¿ÃµÂ øµø™ -->
+						<!-- Ïä¨ÎùºÏù¥Îìú ÏòÅÏó≠ -->
 						<li class="slideitem">
 							<a>
 								<img src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
@@ -40,7 +40,7 @@
 							</a>
 						</li>
 					</ul>
-					<!-- ¡¬,øÏ ΩΩ∂Û¿ÃµÂ πˆ∆∞ -->
+					<!-- Ï¢å,Ïö∞ Ïä¨ÎùºÏù¥Îìú Î≤ÑÌäº -->
 					<div class="slideBtn">
 						<div>
 							<span class="left"></span>
@@ -48,7 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- ∆‰¿Ã¬° -->
+				<!-- ÌéòÏù¥Ïßï -->
 				<ul class="slide-pagelist">
 					<li><span class="js-slideActive"></span></li>
 					<li><span></span></li>
@@ -57,23 +57,23 @@
 				</ul>
 			</div>	
 		</div>
-		<!-- ¿œπ› ∞‘Ω√±€ øµø™ -->
+		<!-- ÏùºÎ∞ò Í≤åÏãúÍ∏Ä ÏòÅÏó≠ -->
 		<div class="filter">
-			<!-- « ≈Õ -->
+			<!-- ÌïÑÌÑ∞ -->
 			<form action="">
 				<div class="category">
 					<ul class="categoryList">
-						<li class="active">¿¸√º±€</li>
-						<li>√÷Ω≈±€</li>
-						<li>¿Œ±‚±€</li>
+						<li class="active">Ï†ÑÏ≤¥Í∏Ä</li>
+						<li>ÏµúÏã†Í∏Ä</li>
+						<li>Ïù∏Í∏∞Í∏Ä</li>
 					</ul>
 				</div>
 				<div class="sort">
 					<ul class="sortList">
-						<li class="active">µÓ∑œ¿œº¯</li>
-						<li>¡∂»∏º¯</li>
-						<li>¥Ò±€º¯</li>
-						<li>¡¡æ∆ø‰º¯</li>
+						<li class="active">Îì±Î°ùÏùºÏàú</li>
+						<li>Ï°∞ÌöåÏàú</li>
+						<li>ÎåìÍ∏ÄÏàú</li>
+						<li>Ï¢ãÏïÑÏöîÏàú</li>
 					</ul>
 				</div>
 			</form>
@@ -82,18 +82,18 @@
 		<div class="posList">
 			<c:forEach items="${snsList}" var="snsVo">
 				<div class="post" data-postid="${snsVo.postId}">
-					<!-- ¿ÃπÃ¡ˆ øµø™ -->
+					<!-- Ïù¥ÎØ∏ÏßÄ ÏòÅÏó≠ -->
 					<div class="postImgArea">
 						<img src="${pageContext.request.contextPath}/assets/test/overHeight.jpg">
 					</div>
-					<!-- ∞‘Ω√±€ øµø™ -->
+					<!-- Í≤åÏãúÍ∏Ä ÏòÅÏó≠ -->
 					<div class="postContentArea">
-						<!-- ¿€º∫¿⁄ ¿ÃπÃ¡ˆ -->
+						<!-- ÏûëÏÑ±Ïûê Ïù¥ÎØ∏ÏßÄ -->
 						<div class="profileImg">
 							<img alt="profileImg" src="${pageContext.request.contextPath}/assets/test/testImg.PNG">
 						</div>
 						<div class="text">
-							<!-- ¿€º∫¿⁄ ¡§∫∏ -->
+							<!-- ÏûëÏÑ±Ïûê Ï†ïÎ≥¥ -->
 							<div class="writerInfo">
 								<div class=writerInfo-name>
 									${snsVo.user_nickname }
@@ -106,7 +106,7 @@
 								${snsVo.content}
 							</div>
 							<div class="contentsInfo">
-								<!-- ¡¡æ∆ø‰ / ¥Ò±€ ºˆ -->
+								<!-- Ï¢ãÏïÑÏöî / ÎåìÍ∏Ä Ïàò -->
 								<div class="likeCount">
 									<i class="fa-solid fa-heart"></i>
 									<span>
