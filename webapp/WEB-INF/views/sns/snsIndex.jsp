@@ -133,4 +133,5 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/common/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/sns/sns.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/sns/modal.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/includes/login/login.js"></script>
 </html>

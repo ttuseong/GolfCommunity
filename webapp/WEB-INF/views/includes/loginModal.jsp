@@ -42,10 +42,11 @@
                         <div class="content registerBox" style="display:none;">
                     	    <div class="form">
                         	    <form method="" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
-                            	    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                               		<input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                	<input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                	<input class="btn btn-default btn-register" type="button" value="Create account" name="commit">
+                            	    <input id="id" class="form-control js-add-account-id" type="text" placeholder="id" name="id">
+                            	    <input id="nickName" class="form-control js-add-account-nickName" type="text" placeholder="nick name" name="nickName">
+                               		<input id="password" class="form-control js-add-account-pwd" type="password" placeholder="Password" name="password">
+                                	<input id="password_confirmation" class="form-control js-add-account-pwdConfirmatin" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                	<input class="btn btn-default btn-register js-addAccount" type="button" value="Create account" name="commit">
                                 </form>
                             </div>
                         </div>
@@ -67,4 +68,3 @@
 	  </div>
 </div>
     
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/includes/login/login.js"></script>
