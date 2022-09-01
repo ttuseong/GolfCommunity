@@ -85,14 +85,23 @@ $(".js-addAccount").on("click", function() {
     	url : url + "/login/addAccount",      
       	type : "post",
       	data : data,
+      	dataType : "json",
       	success : function(result){
 			console.log(result);
-	
+			if(result == 1){
+				alert("계정이 생성되었습니다.");
+				
+				$(".js-add-account-id").val("");
+				$(".js-add-account-nickName").val("");
+				$(".js-add-account-pwd").val("");
+				$(".js-add-account-pwdConfirmatin").val("");
+				
+				showLoginForm();
+			} else{
+				alert("아이디 또는 닉네임 변경이 필요합니다.");
+			}
 		
       	},
-      	error : function(XHR, status, error) {
-         	console.error(status + " : " + error);
-      	}
    	});
 });
 

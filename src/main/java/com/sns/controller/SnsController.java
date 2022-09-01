@@ -36,7 +36,6 @@ public class SnsController {
 	@ResponseBody
 	@RequestMapping("/GetPostDetail")
 	public Map<String, Object> GetPostDetail(@ModelAttribute GetPostDetailParamVo param) {	
-		System.out.println("test : " +  snsService.GetPostDetail(param));
 		return snsService.GetPostDetail(param);
 	}
 }

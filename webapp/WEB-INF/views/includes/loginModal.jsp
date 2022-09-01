@@ -31,7 +31,7 @@
                             <div class="error"></div>
                             <div class="form loginBox">
                                 <form method="" action="" accept-charset="UTF-8">
-                    	           <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                    	           <input id="email" class="form-control" type="text" placeholder="id" name="id">
                 	               <input id="password" class="form-control" type="password" placeholder="Password" name="password">
              	                   <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
                                 </form>

@@ -14,11 +14,17 @@ public class AccountService {
 	@Autowired
 	AccountDao accountDao;
 	
-	public Map<String, Integer> InsertAccount(InsertAccountParamVo param) {
+	public int InsertAccount(InsertAccountParamVo param) {
+		int resultCode = 0;
+		try {
+			resultCode = accountDao.InsertAccount(param);
+		}
+		catch (Exception e) {
+			System.out.println(e.toString());
+			
+			resultCode = 0;
+		}
 		
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("resultCode", accountDao.InsertAccount(param));
-		
-		return map;
+		return resultCode;
 	}
 }
