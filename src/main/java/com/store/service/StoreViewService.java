@@ -4,15 +4,16 @@ import com.store.repository.TbGolfCourseRepository;
 import com.store.vo.TbGolfCourseVo;
 import com.store.vo.res.StoreListResVo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 
-@RequiredArgsConstructor
 @Service
 public class StoreViewService {
-    private final TbGolfCourseRepository tbGolfCourseRepository;
+    @Autowired
+    TbGolfCourseRepository tbGolfCourseRepository;
 
 
     /**
