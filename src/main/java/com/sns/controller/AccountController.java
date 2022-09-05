@@ -28,6 +28,6 @@ public class AccountController {
 	
 	@RequestMapping("")
 	public String Login(@ModelAttribute LoginParamVo param) {
-		
+		return null;
 	}
 }
