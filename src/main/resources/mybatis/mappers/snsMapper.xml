@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sns">
+	<select id="GetPost" resultType="com.sns.vo.SnsVo" parameterType="int">
+		<![CDATA[	
+			SELECT post.postId, user.user_nickname, post.content, post.reg_date, comment.commentCount
+    			, likes.likesCount, user.profilimg, postImg.imgURI
+    			FROM tb_post AS post
+                    INNER JOIN tb_user AS user
+                    ON post.user_no = user.user_no
+                    LEFT OUTER JOIN (
+                        SELECT postId, COUNT(*) AS commentCount
+                            FROM tb_comment
+                            GROUP BY postId) AS comment
+                    ON post.postId = comment.postId
+                    LEFT OUTER JOIN(
+                        SELECT postId, COUNT(*) AS likesCount
+                            FROM tb_likes
+                            GROUP BY postId) AS likes
+                    ON post.postId = likes.postId
+                    LEFT OUTER JOIN(
+                        SELECT postImg.postId, postImg.imgURI
+                            FROM (
+                                SELECT postimgmapping.postId, postimg.imgURI, CASE WHEN @GRP = postimgmapping.postId THEN @ROWNUM:=@ROWNUM + 1 ELSE @ROWNUM :=1 END AS ROWNUM
+                                    , (@GRP := postimgmapping.postId) AS dummy
+                                    FROM tb_postimg AS postimg
+                                    INNER JOIN tb_postimgmapping AS postimgmapping
+                                        ON postimg.imgNo = postimgmapping.imgNo
+                                   ,(SELECT @ROWNUM:=0, @GRP:='') AS temp
+                            ) AS postImg
+                        WHERE postImg.ROWNUM = 1
+                    ) AS postImg
+                    ON post.postId = postImg.postId
+    			WHERE isDelete = 0
+        			AND isBlind = 0
+    			ORDER BY reg_Date DESC
+    			LIMIT 10 OFFSET #{pageNo}
+		]]>
+	</select>
+	
+	<select id="GetPostImgs" resultType="com.sns.vo.GetPostImgsResultVo" parameterType="int">
+		<![CDATA[
+			SELECT postimg.imgURI
+    			FROM tb_postimgmapping AS postimgmapping
+    			INNER JOIN tb_postimg AS postimg
+        			ON postimgmapping.imgNo = postimg.imgNo
+    			WHERE postimgmapping.postId = #{postId}
+		]]>
+	</select>
+	
+	<select id="GetPostDetail" resultType="com.sns.vo.GetPostDetailResultVo" parameterType="com.sns.vo.GetPostDetailParamVo">
+		<![CDATA[
+			SELECT user.user_nickname, user.profilimg,  post.content, likesCount.count, userLiked.userLiked
+			    FROM tb_post AS post
+			    INNER JOIN tb_user AS user
+			        ON post.user_no = user.user_no
+			    LEFT OUTER JOIN (
+			        SELECT postId, COUNT(*) AS count
+			            FROM tb_likes
+			            WHERE postId = ${postId}
+			            GROUP BY postId) AS likesCount
+			        ON post.postId = likesCount.postID
+			    LEFT OUTER JOIN(
+			        SELECT postId,  COUNT(*) AS userLiked
+			            FROM tb_likes
+			            WHERE postId = ${postId}
+			            AND user_no = ${user_no} ) AS userLiked
+			        ON userLiked.postId = post.postId
+			    WHERE post.postId = ${postId}
+		]]>
+	</select>
+	
+	<select id="GetPostComment" resultType="com.sns.vo.GetPostCommentResultVo" parameterType="int">
+		<![CDATA[
+			SELECT user.profilimg, user.user_nickname, comment.content, comment.reg_date
+    			FROM tb_comment AS comment
+    			INNER JOIN tb_user AS user
+        			ON comment.user_no = user.user_no
+    			WHERE comment.postId = #{postId}
+        			AND comment.isDelete = 0
+        			AND comment.isBlind = 0
+    			ORDER BY comment.reg_date DESC
+		]]>
+	</select>
+</mapper>

@@ -15,8 +15,10 @@
 	
 	<div class="account col-2">
 		<ul>
-			<li><a href="">로그인</a></li>
-			<li><a href="">회원가입</a></li>
+			<li><a href="javascript:void(0)" onclick="openLoginModal();">로그인</a></li>
 		</ul>
 	</div>
 </header>
+
+
+<jsp:include page="/WEB-INF/views/includes/loginModal.jsp"></jsp:include>

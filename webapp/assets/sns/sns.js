@@ -1,3 +1,5 @@
+var url = window.location.pathname.substring(0,window.location.pathname.indexOf("/",2));
+
 $(document).ready(function(){
 	autoSilde();
 });
@@ -17,7 +19,7 @@ function autoSilde(){
 
 
 // 슬라이드 오른쪽 화살표 버튼 클릭했을 때
-$(".right").on("click", function(){
+$(".slideBtn .right").on("click", function(){
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
 	var pos 			= slideActive.parent().index() + 1;
 	var pageLength 		= $(".slide-pagelist").children().length;
@@ -37,7 +39,7 @@ $(".right").on("click", function(){
 });
 
 // 슬라이드 왼쪽 화살표 클릭했을 때
-$(".left").on("click", function(){
+$(".slideBtn .left").on("click", function(){
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
 	var pos 			= slideActive.parent().index() - 1;
 	var pageLength 		= $(".slide-pagelist").children().length;
@@ -57,15 +59,15 @@ $(".left").on("click", function(){
 
 //슬라이드 아래 특정 위치로 보내주는 버튼 클릭시 이동
 $(".slide-pagelist li").on("click", function(){
-	var clikcPos = $(this).index();
+	var clickPos = $(this).index();
 	var slideActive 	= $(".slide-pagelist .js-slideActive");
-	var translateValue 	= clikcPos * -100;
+	var translateValue 	= clickPos * -100;
 	
 	//현재 활성화된 클래스 제거
 	slideActive.removeClass("js-slideActive");
 	
 	//다음 이동해야하는 곳 클래스 추가
-	$(".slide-pagelist").children().eq(clikcPos).children('span').addClass("js-slideActive");
+	$(".slide-pagelist").children().eq(clickPos).children('span').addClass("js-slideActive");
 	
 	//슬라이드 이동
 	$('.slidelist > li').css({'transform':'translateX(' + translateValue + '%)'})
@@ -122,3 +124,4 @@ function postSort(){
 	//posList의 높이 값이 있어야 필터가 화면 상단에 붙어 있을 수 있어서 가장 큰 height 값을 저장
 	$(".posList").css("height", Math.max.apply(null, arr));
 }
+

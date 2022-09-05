@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="account">
+	<insert id="insertAccount" parameterType="com.sns.vo.InsertAccountParamVo">
+		<![CDATA[
+			INSERT INTO tb_user(user_id, user_nickname, user_pwd, user_prev_pwd)
+    			VALUES('${id}', '${nickName}', SHA2('${password}', 256), SHA2('${password}', 256))
+		]]>
+	</insert>
+
+</mapper>
